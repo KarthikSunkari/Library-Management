@@ -44,7 +44,7 @@ public class ViewHistoryStudent extends JFrame {
 		String column[]=null;
 		try{
 			Connection con=DB.getConnection();
-			String sqlStmt = "select book.bname as Books, EventDate, Logtype from Logs inner join book on Logs.book_id = book.book_id where Logs.customer_id = ?";
+			String sqlStmt = "select book.bname as Books, Event_Date, Log_type from Logs inner join book on Logs.book_id = book.book_id where Logs.customer_id = ?";
 			PreparedStatement ps=con.prepareStatement(sqlStmt,ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
 			ps.setInt(1,Integer.parseInt(rollno));
 			ResultSet rs=ps.executeQuery();			

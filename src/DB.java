@@ -6,7 +6,7 @@ public class DB {
 		Connection con=null;
 		try{
 			Class.forName("org.postgresql.Driver");
-			con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/LibraryDB","postgres","1234");
+			con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/LibraryDb","postgres","zxcvbnm");
 		}catch(Exception e){System.out.println(e);}
 		return con;
 	}

@@ -44,7 +44,7 @@ public class ViewIssuedBooks extends JFrame {
 		String column[]=null;
 		try{
 			Connection con=DB.getConnection();
-			PreparedStatement ps=con.prepareStatement("select * from issue",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+			PreparedStatement ps=con.prepareStatement("select IB.bname, customer.customer_id, customer.cname, issuedate, duedate from customer inner join (issue inner join book on issue.book_id = book.book_id) as IB on IB.customer_id = customer.customer_id",ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
 			ResultSet rs=ps.executeQuery();
 			
 			ResultSetMetaData rsmd=rs.getMetaData();
